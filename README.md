@@ -66,8 +66,6 @@ Available scripts
 - npm run format — run Prettier (if configured)
 
 
-
-
 Project structure (high level)
 - app/ — Next.js app router pages and layout
 - components/ — shared React components
@@ -76,9 +74,17 @@ Project structure (high level)
 - styles/ — global styles or Tailwind config
 - tests/ — unit / integration tests
 
+# Run all Playwright tests
+npm run test:e2e
 
-Deployment
-- Deploy to Vercel for zero-config Next.js deployments. Link the repository in Vercel and set environment variables in the dashboard.
+# Run tests in UI mode (interactive mode with visual test runner)
+npm run test:e2e:ui
+
+# Run tests in headed mode (see browser window during execution)
+npm run test:e2e:headed
+
+# View the HTML report from the last test run
+npm run test:e2e:report
 
 Contributing
 1. Fork the repo
