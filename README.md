@@ -65,12 +65,8 @@ Available scripts
 - npm run test — run tests (if present)
 - npm run format — run Prettier (if configured)
 
-Environment variables
-Add an `.env.example` file with the variables you use. Example:
 
-NEXT_PUBLIC_API_BASE_URL=https://api.example.com
-# NEXT_PUBLIC_STRIPE_KEY=pk_test_...
-# DATABASE_URL=postgresql://user:pass@localhost:5432/dbname (if used in server code)
+
 
 Project structure (high level)
 - app/ — Next.js app router pages and layout
@@ -80,12 +76,6 @@ Project structure (high level)
 - styles/ — global styles or Tailwind config
 - tests/ — unit / integration tests
 
-Development notes & recommendations
-- Use the Next.js app router conventions: layout.tsx, page.tsx, server components for data fetching where beneficial.
-- Keep API calls in a small set of functions under lib/api to allow easier mocking and testing.
-- Add a `.env.example` and document required keys here.
-- Add basic tests using Jest + React Testing Library for key components (product list, product card, search).
-- Consider adding Storybook for component-level documentation and visual testing.
 
 Deployment
 - Deploy to Vercel for zero-config Next.js deployments. Link the repository in Vercel and set environment variables in the dashboard.
