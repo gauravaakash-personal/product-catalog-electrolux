@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Catalog — Electrolux
 
-## Getting Started
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()
+[![Vercel](https://img.shields.io/badge/deploy-vercel-blue.svg)]()
+[![Node](https://img.shields.io/badge/node-%3E%3D16-brightgreen.svg)]()
 
-First, run the development server:
+One-line summary
+A Next.js 14 (app router) product catalog frontend/demo for Electrolux products — listing, filtering, and product detail pages with a simple, extensible structure for integration with external product APIs.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Table of contents
+- [Demo](#demo)
+- [Features](#features)
+- [Tech stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Quick start](#quick-start)
+- [Available scripts](#available-scripts)
+- [Environment variables](#environment-variables)
+- [Project structure](#project-structure)
+- [Development notes](#development-notes)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Demo
+A preview/deployed demo (if available) — add your Vercel/Netlify URL here:
+https://your-deploy-url.example.com
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Features
+- Product listing and detail pages
+- Search and category filters
+- SSR/SSG where appropriate using Next.js app router
+- Accessible and responsive UI
+- Easy to swap in a headless CMS or product API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tech stack
+- Next.js (App router)
+- React + TypeScript
+- Tailwind CSS / CSS Modules (adapt if using a different styling solution)
+- Optional: Storybook, Jest/React Testing Library
 
-## Learn More
+Prerequisites
+- Node.js 16+ (LTS recommended)
+- npm, yarn, or pnpm
+- (Optional) .env values for external APIs (see below)
 
-To learn more about Next.js, take a look at the following resources:
+Quick start (development)
+1. Clone
+   git clone git@github.com:gauravaakash-personal/product-catalog-electrolux.git
+2. Install
+   npm install
+   # or
+   pnpm install
+3. Copy env
+   cp .env.example .env.local
+4. Run dev server
+   npm run dev
+5. Open http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Available scripts
+- npm run dev — run development server (hot reload)
+- npm run build — build for production
+- npm start — start production server (after build)
+- npm run lint — run ESLint
+- npm run test — run tests (if present)
+- npm run format — run Prettier (if configured)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Environment variables
+Add an `.env.example` file with the variables you use. Example:
 
-## Deploy on Vercel
+NEXT_PUBLIC_API_BASE_URL=https://api.example.com
+# NEXT_PUBLIC_STRIPE_KEY=pk_test_...
+# DATABASE_URL=postgresql://user:pass@localhost:5432/dbname (if used in server code)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Project structure (high level)
+- app/ — Next.js app router pages and layout
+- components/ — shared React components
+- lib/ or utils/ — helpers, API clients
+- public/ — images, static assets
+- styles/ — global styles or Tailwind config
+- tests/ — unit / integration tests
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Development notes & recommendations
+- Use the Next.js app router conventions: layout.tsx, page.tsx, server components for data fetching where beneficial.
+- Keep API calls in a small set of functions under lib/api to allow easier mocking and testing.
+- Add a `.env.example` and document required keys here.
+- Add basic tests using Jest + React Testing Library for key components (product list, product card, search).
+- Consider adding Storybook for component-level documentation and visual testing.
+
+Deployment
+- Deploy to Vercel for zero-config Next.js deployments. Link the repository in Vercel and set environment variables in the dashboard.
+
+Contributing
+1. Fork the repo
+2. Create a feature branch: git checkout -b feat/my-feature
+3. Commit changes, run linters/tests
+4. Open a pull request describing your change
+
+Please follow conventional commit messages and keep PRs focused and small.
+
+License
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+Contact
+Maintainer: Gaurav Aakash — https://github.com/gauravaakash-personal
